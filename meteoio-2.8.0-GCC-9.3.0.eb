@@ -21,7 +21,7 @@ builddependencies = [
 
 separate_build_dir = True
 
-cmakeopts = {"shared": True,
+local_cmakeopts = {"shared": True,
 "PLUGIN_A3DIO":False,
 "PLUGIN_ALPUG":False,
 "PLUGIN_ARCIO":False,
@@ -45,13 +45,14 @@ cmakeopts = {"shared": True,
 "PLUGIN_SASEIO":False,
 "PROJ4":False}
 
-configopts = ''
-for k,v in cmakeopts.items():
+configopts = ""
+for k,v in local_cmakeopts.items():
     configopts = configopts + f' -D{k}=' +  str(v).upper()
 
 
 sanity_check_paths = {
     'dirs': ['lib','include'],
+    'files': ['lib/libmeteoio.so']
 }
 
 moduleclass = 'devel'
