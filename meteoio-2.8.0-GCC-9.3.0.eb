@@ -1,0 +1,57 @@
+easyblock = 'CMakeMake'
+
+name = 'meteoio'
+version = '2.8.0'
+
+homepage = 'https://gitlabext.wsl.ch/snow-models/meteoio'
+description = """The MeteoIO library aims at making data access easy and safe for numerical 
+    simulations in environmental sciences requiring general meteorological data."""
+
+toolchain = {'name': 'GCC', 'version': '9.3.0'}
+
+source_urls = ['https://gitlabext.wsl.ch/snow-models/meteoio/-/archive/MeteoIO-%(version)s/']
+sources = ['meteoio-MeteoIO-%(version)s.tar.gz']
+# checksums = []
+
+builddependencies = [
+    ('CMake', '3.18'),
+    ('binutils', '2.34')
+]
+
+
+separate_build_dir = True
+
+cmakeopts = {"shared": True,
+"PLUGIN_A3DIO":False,
+"PLUGIN_ALPUG":False,
+"PLUGIN_ARCIO":False,
+"PLUGIN_ARPSIO":False,
+"PLUGIN_BORMAIO":False,
+"PLUGIN_CSVIO":False,
+"PLUGIN_COSMOXMLIO":False,
+"PLUGIN_DBO":False,
+"PLUGIN_GEOTOPIO":False,
+"PLUGIN_GRASSIO":False,
+"PLUGIN_GRIBIO":False,
+"PLUGIN_GSNIO":False,
+"PLUGIN_IMISIO":False,
+"PLUGIN_NETCDFIO":False,
+"PLUGIN_OSHDIO":False,
+"PLUGIN_PGMIO":False,
+"PLUGIN_PNGIO":False,
+"PLUGIN_PSQLIO":False,
+"PLUGIN_SMETIO":False,
+"PLUGIN_SNIO":False,
+"PLUGIN_SASEIO":False,
+"PROJ4":False}
+
+configopts = ''
+for k,v in cmakeopts.items():
+    configopts = configopts + f' -D{k}=' +  str(v).upper()
+
+
+sanity_check_paths = {
+    'dirs': ['lib','include'],
+}
+
+moduleclass = 'devel'
