@@ -24,8 +24,7 @@ builddependencies = [
     ('binutils', '2.34'),
 ]
 
-dependencies =
-[
+dependencies = [
 ('boost', '1.72.0'),
 ]
 
