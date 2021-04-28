@@ -21,11 +21,10 @@ sources = [{
 
 builddependencies = [
     ('CMake', '3.18'),
-    ('binutils', '2.34'),
 ]
 
 dependencies = [
-('boost', '1.72.0'),
+('Boost', '1.72.0'),
 ]
 
 
