@@ -21,7 +21,8 @@ sources = [{
 
 builddependencies = [
     ('CMake', '3.18'),
-    ('boost-mpi', '1.72.0')
+    ('boost', '1.72.0'),
+    ('binutils', '2.34'),
 ]
 
 
