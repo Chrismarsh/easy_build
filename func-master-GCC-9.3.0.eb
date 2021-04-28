@@ -1,0 +1,38 @@
+easyblock = 'CMakeMake'
+
+name = 'func'
+version = '1.0'
+
+homepage = 'https://gitlabext.wsl.ch/snow-models/meteoio'
+description = """The MeteoIO library aims at making data access easy and safe for numerical 
+    simulations in environmental sciences requiring general meteorological data."""
+
+toolchain = {'name': 'GCC', 'version': '9.3.0'}
+
+sources = [{
+    'filename': 'func-master.tar.gz',
+    'git_config': {
+        'url': 'https://github.com/uofs-simlab/',
+        'repo_name': 'func',
+        'tag': 'master',
+    },
+}]
+
+
+builddependencies = [
+    ('CMake', '3.18'),
+    ('boost-mpi', '1.72.0')
+]
+
+
+separate_build_dir = True
+
+configopts = '-DUSE_QUADMATH=FALSE'
+
+
+sanity_check_paths = {
+    'dirs': ['lib','include'],
+    'files': ['lib/libfunc.so']
+}
+
+moduleclass = 'devel'
