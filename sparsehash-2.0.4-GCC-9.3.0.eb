@@ -1,4 +1,4 @@
-easyblock = 'CMakeMake'
+easyblock = 'ConfigureMake'
 
 name = 'sparsehash'
 version = '2.0.4'
