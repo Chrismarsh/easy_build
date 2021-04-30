@@ -1,3 +1,5 @@
+easyblock = 'CMakeMake'
+
 name = 'Trilinos'
 version = '12.18.1'
 
@@ -7,7 +9,7 @@ description = """The Trilinos Project is an effort to develop algorithms and ena
  engineering and scientific problems. A unique design feature of Trilinos is its focus on packages."""
 
 toolchain = {'name': 'gompi', 'version': '2020a'}
-toolchainopts = {'usempi': True, 'pic': True, 'strict': True}
+toolchainopts = {'usempi': True, 'pic': True, 'strict': True, 'openmp': True}
 
 source_urls = [
     'https://github.com/trilinos/Trilinos/archive'
@@ -15,34 +17,29 @@ source_urls = [
 sources = ['%(namelower)s-release-12-18-1.tar.gz']
 
 
-multi_deps_load_default = False
-multi_deps = {"Python": ["3.8"]}
 builddependencies = [
-    ('Boost', '1.72.0'),
-    ('netCDF', '4.7.4'),
-    ('MATIO', '1.5.19'),
-    ('SWIG', '4.0.1'),
-    ('OpenBLAS','0.3.9'),
-
+    ('CMake', '3.18.4'),
 ]
-preconfigopts = "unset EBPYTHONPREFIXES && "
-preconfigopts += "pyver=$(python -c 'import sys; print(\"python%s.%s\"%sys.version_info[:2])') && "
-preconfigopts += "pip install numpy --prefix=%(installdir)s && "
-preconfigopts += "export PYTHONPATH=$PYTHONPATH:%(installdir)s/lib/$pyver/site-packages && "
-preconfigopts += "export CPATH=$CPATH:%(installdir)s/lib/$pyver/site-packages/numpy/core/include && "
-configopts = '-DNetCDF_NEEDS_HDF5=ON -DShyLU_NodeTacho_ENABLE_EXAMPLES=OFF -DShyLU_Node_ENABLE_EXAMPLES=OFF '
-configopts += '-DXpetra_ENABLE_EXAMPLES=OFF -DXpetra_ENABLE_TESTS=OFF -DIfpack2_ENABLE_TESTS=OFF '
-configopts += '-DShyLU_DDFROSch_ENABLE_TESTS=OFF -DShyLU_DD_ENABLE_TESTS=OFF '
-configopts += '-DTrilinosCouplings_ENABLE_EXAMPLES=OFF -DMPI_BASE_DIR=$EBROOTOPENMPI'
-configopts += '-DBLAS_LIBRARY_DIRS=$EBROOTOPENBLAS -DLAPACK_LIBRARY_DIRS=$EBROOTOPENBLAS -DTrilinos_ENABLE_OpenMP=TRUE -DTrilinos_ENABLE_THREAD_SAFE=TRUE -DTPL_ENABLE_MPI=TRUE'
+dependencies = [
+       ('OpenBLAS','0.3.9'),
+]
 
-openmp = False
+
+configopts =  '-DBLAS_LIBRARY_DIRS=$EBROOTOPENBLAS -DLAPACK_LIBRARY_DIRS=$EBROOTOPENBLAS'
+configopts += '-DTrilinos_ENABLE_Fortran=FALSE'
+configopts += '-DTrilinos_ENABLE_TESTS=FALSE'
+configopts += '-DBUILD_SHARED_LIBS=TRUE'
+configopts += '-DTrilinos_ENABLE_ALL_PACKAGES=FALSE'
+configopts += '-DTrilinos_ENABLE_Belos=TRUE'
+configopts += '-DTrilinos_ENABLE_Ifpack2=TRUE'
+configopts += '-DMPI_BASE_DIR=$EBROOTOPENMPI'
+configopts += '-DTrilinos_ENABLE_OpenMP=TRUE'
+configopts += '-DTrilinos_ENABLE_THREAD_SAFE=TRUE'
+configopts += '-DTPL_ENABLE_MPI=TRUE'
+
+
 build_shared_libs = True
 
-preinstallopts = preconfigopts
-postinstallcmds = [
-   "sed -i 's/PyTrilinos;//' %(installdir)s/lib/cmake/Trilinos/TrilinosConfig.cmake",
-]
 
 # too parallel is too slow because of memory requirements (results in swapping), and may cause build/tests to fail
 # building with 20 cores seems to require about 100GB of memory (peak usage)
