@@ -6,7 +6,7 @@ description = """The Trilinos Project is an effort to develop algorithms and ena
  within an object-oriented software framework for the solution of large-scale, complex multi-physics
  engineering and scientific problems. A unique design feature of Trilinos is its focus on packages."""
 
-toolchain = {'name': 'GCC', 'version': '9.3.0'}
+toolchain = {'name': 'gompi', 'version': '2020a'}
 toolchainopts = {'usempi': True, 'pic': True, 'strict': True}
 
 source_urls = [
@@ -16,9 +16,9 @@ sources = ['%(namelower)s-release-12-18-1.tar.gz']
 
 
 multi_deps_load_default = False
-multi_deps = {"Python": ["2.7", "3.6", "3.7", "3.8"]}
+multi_deps = {"Python": ["3.8"]}
 builddependencies = [
-    ('Boost-mpi', '1.72.0'),
+    ('Boost', '1.72.0'),
     ('netCDF', '4.7.4'),
     ('MATIO', '1.5.19'),
     ('SWIG', '4.0.1'),
