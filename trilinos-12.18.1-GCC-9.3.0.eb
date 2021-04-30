@@ -42,6 +42,12 @@ configopts += '-DTPL_ENABLE_MPI=TRUE'
 build_shared_libs = True
 
 
+sanity_check_paths = {
+    'dirs': ['lib','include'],
+    'files': ['include/Trilinos_version.h',
+                'lib/libtrilinosss.so']
+}
+
 # too parallel is too slow because of memory requirements (results in swapping), and may cause build/tests to fail
 # building with 20 cores seems to require about 100GB of memory (peak usage)
 maxparallel = 10
