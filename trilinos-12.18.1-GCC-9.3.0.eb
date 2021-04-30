@@ -29,11 +29,13 @@ dependencies = [
 configopts =  '-DBLAS_LIBRARY_DIRS=$EBROOTOPENBLAS -DLAPACK_LIBRARY_DIRS=$EBROOTOPENBLAS'
 configopts += '-DTrilinos_ENABLE_Fortran=FALSE'
 configopts += '-DTrilinos_ENABLE_TESTS=FALSE'
-configopts += '-DBUILD_SHARED_LIBS=TRUE'
+
 configopts += '-DTrilinos_ENABLE_ALL_PACKAGES=FALSE'
-configopts += '-DTrilinos_ENABLE_Belos=TRUE'
-configopts += '-DTrilinos_ENABLE_Ifpack2=TRUE'
+configopts += '-DTrilinos_ENABLE_Belos=ON'
+configopts += '-DTrilinos_ENABLE_Ifpack2=ON'
+
 configopts += '-DMPI_BASE_DIR=$EBROOTOPENMPI'
+
 configopts += '-DTrilinos_ENABLE_OpenMP=TRUE'
 configopts += '-DTrilinos_ENABLE_THREAD_SAFE=TRUE'
 configopts += '-DTPL_ENABLE_MPI=TRUE'
