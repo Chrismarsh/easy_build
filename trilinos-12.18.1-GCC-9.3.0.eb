@@ -27,6 +27,9 @@ dependencies = [
 
 
 configopts =  '-DBLAS_LIBRARY_DIRS=$EBROOTOPENBLAS -DLAPACK_LIBRARY_DIRS=$EBROOTOPENBLAS'
+configopts += """ -DBLAS_LIBRARY_NAMES="openblas"  -DLAPACK_LIBRARY_NAMES="openblas" """
+
+
 configopts += ' -DTrilinos_ENABLE_Fortran=FALSE'
 configopts += ' -DTrilinos_ENABLE_TESTS=FALSE'
 
