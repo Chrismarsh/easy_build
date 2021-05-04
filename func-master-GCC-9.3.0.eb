@@ -7,7 +7,8 @@ homepage = 'https://gitlabext.wsl.ch/snow-models/meteoio'
 description = """The MeteoIO library aims at making data access easy and safe for numerical 
     simulations in environmental sciences requiring general meteorological data."""
 
-toolchain = {'name': 'GCC', 'version': '9.3.0'}
+toolchain = {'name': 'gompi', 'version': '2020a'}
+toolchainopts = {'usempi':True}
 
 sources = [{
     'filename': 'func-master.tar.gz',
@@ -24,7 +25,7 @@ builddependencies = [
 ]
 
 dependencies = [
-('Boost', '1.72.0'),
+('Boost', '1.72.0','-mpi'),
 ]
 
 
