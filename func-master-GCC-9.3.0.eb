@@ -18,7 +18,7 @@ sources = [{
         'tag': 'master',
     },
 }]
-
+checksums = ['8ef00fab36278b9f2e7b566ce523ae4774700bba9a7bc975ac15912a0fa91cfe']
 
 builddependencies = [
     ('CMake', '3.18'),
