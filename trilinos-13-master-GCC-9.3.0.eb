@@ -1,0 +1,65 @@
+# Built with EasyBuild version 4.3.1-r5e44ff7386b8710ec5f035eae98e9c720d38dec8 on 2021-02-12_23-30-30
+easyblock = 'CMakeMake'
+
+name = 'Trilinos'
+version = 'master'
+
+homepage = 'https://trilinos.org'
+description = """The Trilinos Project is an effort to develop algorithms and enabling technologies
+ within an object-oriented software framework for the solution of large-scale, complex multi-physics
+ engineering and scientific problems. A unique design feature of Trilinos is its focus on packages."""
+
+toolchain = {'name': 'gompi', 'version': '2020a'}
+toolchainopts = {'usempi': True, 'pic': True, 'strict': True, 'openmp':True}
+
+sources = [{
+    'filename': 'trilinos-master.tar.gz',
+    'git_config': {
+        'url': 'https://github.com/trilinos',
+        'repo_name': 'Trilinos',
+        'tag': 'master',
+    },
+}]
+
+builddependencies = [
+    ('CMake', '3.18.4'),
+    ]
+dependencies = [
+           ('OpenBLAS','0.3.9'),
+           ]
+
+configopts =  '-DBLAS_LIBRARY_DIRS=$EBROOTOPENBLAS -DLAPACK_LIBRARY_DIRS=$EBROOTOPENBLAS'
+configopts += """ -DBLAS_LIBRARY_NAMES="openblas"  -DLAPACK_LIBRARY_NAMES="openblas" """
+
+
+configopts += ' -DTrilinos_ENABLE_Fortran=FALSE'
+configopts += ' -DTrilinos_ENABLE_TESTS=FALSE'
+
+configopts += ' -DTrilinos_ENABLE_ALL_PACKAGES=FALSE'
+configopts += ' -DTrilinos_ENABLE_Belos=ON'
+configopts += ' -DTrilinos_ENABLE_Ifpack2=ON'
+
+configopts += ' -DMPI_BASE_DIR=$EBROOTOPENMPI'
+
+configopts += ' -DTrilinos_ENABLE_OpenMP=TRUE'
+configopts += ' -DTrilinos_ENABLE_THREAD_SAFE=TRUE'
+configopts += ' -DTPL_ENABLE_MPI=TRUE'
+
+configopts += ' -DTpetra_INST_INT_INT=TRUE'
+
+build_shared_libs = True
+
+
+sanity_check_paths = {
+    'dirs': ['lib','include'],
+        'files': ['include/Trilinos_version.h',
+                        'lib/libtrilinosss.so']
+                        }
+
+
+# too parallel is too slow because of memory requirements (results in swapping), and may cause build/tests to fail
+# building with 20 cores seems to require about 100GB of memory (peak usage)
+maxparallel = 10
+
+moduleclass = 'numlib'
+
