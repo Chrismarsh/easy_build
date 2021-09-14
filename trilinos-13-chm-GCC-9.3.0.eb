@@ -20,7 +20,7 @@ sources = [{
        'tag': 'cherrypick_kokkos_for_chm',
     },
 }]
-
+checksums = ['f87dbaa49de73e57b987b41f83d1ea9da81815bee78f88f0d2fa28f53a5c0d86']
 
 builddependencies = [
     ('CMake', '3.18.4'),
