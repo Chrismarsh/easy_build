@@ -17,9 +17,11 @@ sources = [{
     'git_config': {
         'url': 'https://github.com/trilinos',
         'repo_name': 'Trilinos',
-        'tag': 'master',
+        'commit':'53ecba4c5e6b7b962967e5acdb6337d17b5002c7'
+#        'tag': 'master',
     },
 }]
+checksums = ['f87dbaa49de73e57b987b41f83d1ea9da81815bee78f88f0d2fa28f53a5c0d86']
 
 builddependencies = [
     ('CMake', '3.18.4'),
@@ -44,6 +46,8 @@ configopts += ' -DMPI_BASE_DIR=$EBROOTOPENMPI'
 configopts += ' -DTrilinos_ENABLE_OpenMP=TRUE'
 configopts += ' -DTrilinos_ENABLE_THREAD_SAFE=TRUE'
 configopts += ' -DTPL_ENABLE_MPI=TRUE'
+
+configopts += ' -DDTpetra_ENABLE_DEPRECATED_CODE=ON'
 
 configopts += ' -DTpetra_INST_INT_INT=TRUE'
 
