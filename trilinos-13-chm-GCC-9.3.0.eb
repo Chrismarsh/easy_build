@@ -13,11 +13,11 @@ toolchain = {'name': 'gompi', 'version': '2020a'}
 toolchainopts = {'usempi': True, 'pic': True, 'strict': True, 'openmp':True}
 
 sources = [{
-    'filename': 'trilinos-master.tar.gz',
+    'filename': 'trilinos-chm.tar.gz',
     'git_config': {
         'url': 'https://github.com/Chrismarsh/',
         'repo_name': 'Trilinos',
-       'tag': 'cherrypick_kokkos_for_chm',
+       'tag': 'cherrypick_for_chm',
     },
 }]
 checksums = ['f87dbaa49de73e57b987b41f83d1ea9da81815bee78f88f0d2fa28f53a5c0d86']
