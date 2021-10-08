@@ -17,7 +17,7 @@ sources = [{
     'git_config': {
         'url': 'https://github.com/Chrismarsh/',
         'repo_name': 'Trilinos',
-       'tag': 'cherrypick_for_chm',
+        'commit': '605f7e04754d30add233209054397b9582514c21' #cherrypick_for_chm
     },
 }]
 checksums = ['f87dbaa49de73e57b987b41f83d1ea9da81815bee78f88f0d2fa28f53a5c0d86']
@@ -46,7 +46,7 @@ configopts += ' -DTrilinos_ENABLE_OpenMP=TRUE'
 configopts += ' -DTrilinos_ENABLE_THREAD_SAFE=TRUE'
 configopts += ' -DTPL_ENABLE_MPI=TRUE'
 
-configopts += ' -DDTpetra_ENABLE_DEPRECATED_CODE=ON'
+configopts += ' -DDTpetra_ENABLE_DEPRECATED_CODE=OFF'
 
 configopts += ' -DTpetra_INST_INT_INT=TRUE'
 
