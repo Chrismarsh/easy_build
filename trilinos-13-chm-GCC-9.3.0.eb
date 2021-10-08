@@ -46,7 +46,7 @@ configopts += ' -DTrilinos_ENABLE_OpenMP=TRUE'
 configopts += ' -DTrilinos_ENABLE_THREAD_SAFE=TRUE'
 configopts += ' -DTPL_ENABLE_MPI=TRUE'
 
-configopts += ' -DDTpetra_ENABLE_DEPRECATED_CODE=ON'
+configopts += ' -DDTpetra_ENABLE_DEPRECATED_CODE=OFF'
 
 configopts += ' -DTpetra_INST_INT_INT=TRUE'
 
