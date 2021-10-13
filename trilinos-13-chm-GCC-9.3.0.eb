@@ -17,7 +17,8 @@ sources = [{
     'git_config': {
         'url': 'https://github.com/Chrismarsh/',
         'repo_name': 'Trilinos',
-        'commit': '605f7e04754d30add233209054397b9582514c21' #cherrypick_for_chm
+        'commit': '605f7e04754d30add233209054397b9582514c21', #cherrypick_for_chm
+        'keep_git_dir':True
     },
 }]
 
