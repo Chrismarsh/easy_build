@@ -13,7 +13,7 @@ toolchainopts = {'usempi':True}
 sources = [{
     'filename': 'func-master.tar.gz',
     'git_config': {
-        'url': 'https://github.com/uofs-simlab/',
+        'url': 'https://github.com/uofs-simlab',
         'repo_name': 'func',
         'tag': 'master',
         'keep_git_dir':True
