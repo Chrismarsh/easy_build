@@ -2,6 +2,6 @@
 
 for f in *.eb;
 do
-    eb "$f" --inject-checksums
+    eb "$f" --force --inject-checksums
     eb "$f" --force
 done
