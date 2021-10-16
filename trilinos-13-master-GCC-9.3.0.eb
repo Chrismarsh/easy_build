@@ -18,7 +18,7 @@ sources = [{
         'url': 'https://github.com/trilinos',
         'repo_name': 'Trilinos',
         'commit':'53ecba4c5e6b7b962967e5acdb6337d17b5002c7'
-#        'tag': 'master',
+        'keep_git_dir':True
     },
 }]
 checksums = ['f87dbaa49de73e57b987b41f83d1ea9da81815bee78f88f0d2fa28f53a5c0d86']

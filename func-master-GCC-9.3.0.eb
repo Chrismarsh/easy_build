@@ -13,9 +13,10 @@ toolchainopts = {'usempi':True}
 sources = [{
     'filename': 'func-master.tar.gz',
     'git_config': {
-        'url': 'https://github.com/uofs-simlab/',
+        'url': 'https://github.com/uofs-simlab',
         'repo_name': 'func',
-        'tag': 'master',
+        'commit': 'ddd2cfe7040c8ce112eef544b783a31b6c4f0de1',
+        'keep_git_dir':True
     },
 }]
 checksums = ['8ef00fab36278b9f2e7b566ce523ae4774700bba9a7bc975ac15912a0fa91cfe']
