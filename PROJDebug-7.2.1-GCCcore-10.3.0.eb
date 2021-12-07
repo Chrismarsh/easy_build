@@ -1,0 +1,46 @@
+# Built with EasyBuild version 4.4.0-r5824ede87a67bf66b912bcb3f7d73c27835716af on 2021-07-16_19-45-43
+# #
+# This file is an EasyBuild reciPY as per https://github.com/easybuilders/easybuild
+#
+# Copyright:: Copyright 2014-2015 The Cyprus Institute
+# Authors:: Thekla Loizou <t.loizou@cyi.ac.cy>
+# License:: MIT/GPL
+#
+# #
+easyblock = 'CMakeMake'
+
+name = 'PROJDebug'
+version = '7.2.1'
+
+homepage = 'https://proj.org'
+description = """Program proj is a standard Unix filter function which converts
+geographic longitude and latitude coordinates into cartesian coordinates"""
+
+toolchain = {'name': 'GCCcore', 'version': '10.3.0'}
+toolchainopts = {'pic': True}
+
+source_urls = ['https://download.osgeo.org/proj/']
+sources = ['proj-7.2.1.tar.gz']
+checksums = ['b384f42e5fb9c6d01fe5fa4d31da2e91329668863a684f97be5d4760dbbf0a14']
+
+builddependencies = [
+    ('CMake', '3.18'),
+]
+dependencies = [
+    ('SQLiteDebug','3.36'),#,'',('GCCcore','10.3.0')),
+    ('LibTIFF', '4.1.0'),
+    ('cURL', '7.72.0'),
+]
+
+sanity_check_paths = {
+    'files': ['bin/cct', 'bin/cs2cs', 'bin/geod', 'bin/gie', 'bin/proj', 'bin/projinfo',  'lib/libproj.so'],
+    'dirs': ['include'],
+}
+
+
+separate_build_dir = True
+
+configopts = '-DCMAKE_PREFIX_PATH=$EBROOTSQLITEDEBUG'
+
+moduleclass = 'lib'
+
