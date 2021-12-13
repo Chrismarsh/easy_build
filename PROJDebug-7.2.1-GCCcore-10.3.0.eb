@@ -27,7 +27,7 @@ builddependencies = [
     ('CMake', '3.18'),
 ]
 dependencies = [
-    ('SQLiteDebug','3.36'),#,'',('GCCcore','10.3.0')),
+    ('SQLite-chm','3.37'),#,'',('GCCcore','10.3.0')),
     ('LibTIFF', '4.1.0'),
     ('cURL', '7.72.0'),
 ]
