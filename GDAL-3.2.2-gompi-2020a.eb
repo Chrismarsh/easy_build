@@ -20,7 +20,7 @@ dependencies = [
     ('GEOS', '3.9.1'),
     ('zlib', '1.2.11'),
     ('cURL', '7.72.0'),
-    ('PROJDebug', '7.2.1','', ('GCCcore','10.3.0')),
+    ('PROJ-chm', '7.2.1','', ('GCCcore','10.3.0')),
 ]
 
 
