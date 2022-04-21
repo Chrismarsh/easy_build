@@ -21,7 +21,7 @@ sources = [{
         'keep_git_dir':True
     },
 }]
-checksums = ['f87dbaa49de73e57b987b41f83d1ea9da81815bee78f88f0d2fa28f53a5c0d86']
+checksums = ['9c16440e59bb649dade66fc8da69c5bbb94b419f98a65aaa91664988b154a8af']
 
 builddependencies = [
     ('CMake', '3.18.4'),
