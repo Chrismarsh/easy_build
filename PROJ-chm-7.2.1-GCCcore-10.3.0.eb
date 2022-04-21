@@ -9,7 +9,7 @@
 # #
 easyblock = 'CMakeMake'
 
-name = 'PROJDebug'
+name = 'PROJ-chm'
 version = '7.2.1'
 
 homepage = 'https://proj.org'
