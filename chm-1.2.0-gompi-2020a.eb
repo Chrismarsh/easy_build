@@ -34,13 +34,15 @@ dependencies = [
        ('func','1.0'),
        ('sparsehash','2.0.4'),
        ('tbb','2020.2'),
-       ('trilinos','13.4.0'),
+       ('Trilinos','13.4.0'),
        ('HDF5','1.10.6'),
        ('netCDF','4.7.4'),
        ('netCDF-C++4','4.3.1'),
        ('VTK','9.0.1'),
-       ('GDAL-chm','3.2.2'),
-       ('PROJ-chm','7.2.1')
+       ('GDAL','3.4.1'),
+       ('PROJ','9.0.0')
+       # ('GDAL-chm','3.2.2'),
+       # ('PROJ-chm','7.2.1')
        # ('jemalloc','5.2.1')
 
 ]
