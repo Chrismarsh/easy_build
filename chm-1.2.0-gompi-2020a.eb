@@ -9,17 +9,19 @@ description = """The Canadian Hydrological Model (CHM) is a novel modular unstru
 toolchain = {'name': 'gompi', 'version': '2020a'}
 toolchainopts = {'usempi': True, 'pic': True, 'strict': True, 'openmp': True}
 
-source_urls = ['https://github.com/Chrismarsh/CHM/archive/refs/tags/%(version)s.tar.gz']
-# sources = [{
-#     'filename': 'chm-dev.tar.gz',
-#     'git_config': {
-#         'url': 'https://github.com/Chrismarsh/',
-#         'repo_name': 'CHM',
-#         'tag': 'dev',
-#         'keep_git_dir':True
-#     },
-# }]
-srcdir = 'CHM-%(version)s'
+# source_urls = ['https://github.com/Chrismarsh/CHM/archive/refs/tags/%(version)s.tar.gz']
+sources = [{
+    'filename': 'chm-dev.tar.gz',
+    'git_config': {
+        'url': 'https://github.com/Chrismarsh/',
+        'repo_name': 'CHM',
+        'tag': 'dev',
+        'keep_git_dir':False
+    },
+}]
+
+# srcdir = 'CHM-%(version)s'
+
 builddependencies = [
     ('CMake', '3.18.4'),
 ]
