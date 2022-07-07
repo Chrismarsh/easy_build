@@ -17,5 +17,5 @@ eb meteoio-2.8.0-GCC-9.3.0.eb --force
 
 eb sparsehash-2.0.4-GCC-9.3.0.eb --force
 
-eb trilinos-13.4.0-GCC-9.3.0.eb --force --inject-checksums
-eb trilinos-13.4.0-GCC-9.3.0.eb --force
+eb trilinos-13.4.0-gompi-9.3.0.eb --force --inject-checksums
+eb trilinos-13.4.0-gompi-9.3.0.eb --force
