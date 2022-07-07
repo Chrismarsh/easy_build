@@ -34,7 +34,7 @@ dependencies = [
        ('func','1.0'),
        ('sparsehash','2.0.4'),
        ('tbb','2020.2'),
-       ('trilinos','13.4.0','',('gompi', '2020a')),
+       ('trilinos','13.4.0'),
        ('HDF5','1.10.6'),
        ('netCDF','4.7.4'),
        ('netCDF-C++4','4.3.1'),
