@@ -1,7 +1,8 @@
 #!/bin/bash
 
 eb Armadillo-10.2.0-gompi-2020a.eb --force
-eb func-master-GCC-9.3.0.eb --force
+eb func-master-gompi-2020a.eb --force --inject-checksums
+eb func-master-gompi-2020a.eb --force 
 eb CGAL-5.2-gompi-2020a.eb --force
 
 eb ESMF-8.3.0b10-gomkl-2020a.eb --force
