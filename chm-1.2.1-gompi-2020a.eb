@@ -1,7 +1,7 @@
 easyblock = 'CMakeMake'
 
 name = 'CHM'
-version = '1.2.0'
+version = '1.2.1'
 
 homepage = 'https://github.com/Chrismarsh/CHM/'
 description = """The Canadian Hydrological Model (CHM) is a novel modular unstructured mesh based approach for hydrological modelling. It can move between spatial scale, temporal scale, and spatial extents. It is designed for developing and testing process representations for hydrological models."""
