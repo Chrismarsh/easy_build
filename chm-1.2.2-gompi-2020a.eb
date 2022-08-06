@@ -23,7 +23,7 @@ sources = [{
 # srcdir = 'CHM-%(version)s'
 
 builddependencies = [
-    ('CMake', '3.18.4'),
+    ('CMake', '3.22.1'),
 ]
 dependencies = [
        ('OpenBLAS','0.3.9'),
