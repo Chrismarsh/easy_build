@@ -1,32 +1,28 @@
 # Built with EasyBuild version 4.3.0-r05c1b8f4e7b8bde88307d63cec6de41fbb319349 on 2020-11-11_18-16-23
 name = 'ESMF'
-version = '8.3.0b10'
+version = '8.3.0'
 
 homepage = 'https://www.earthsystemcog.org/projects/esmf/'
 description = """The Earth System Modeling Framework (ESMF) is a suite of software tools for developing
  high-performance, multi-component Earth science modeling applications."""
 
-toolchain = {'name': 'gomkl', 'version': '2020a'}
-toolchainopts = {'usempi': True}
+toolchain = {'name': 'foss', 'version': '2020a'}
+toolchainopts = {'usempi': True, 'pic': True, 'strict': True, 'openmp': True}
 
 source_urls = ['https://github.com/%(namelower)s-org/%(namelower)s/archive/refs/tags/']
 sources = ['v%(version)s.tar.gz']
-patches = ['%(name)s-6.1.1_libopts.patch']
-checksums = [
-    '3d8dd96056aeb19130e59f42f0c02e3b332c4be2e0cbb2091e636e449f3b767c',  # v8.3.0b10.tar.gz
-    '3851627f07c32a7da55d99072d619942bd3a1d9dd002e1557716158e7aacdaf4',  # ESMF-6.1.1_libopts.patch
-]
+checksums = ['0ff43ede83d1ac6beabd3d5e2a646f7574174b28a48d1b9f2c318a054ba268fd']
 
 dependencies = [
     ('netCDF', '4.7.4', None, ('GCC', '9.3.0')),
     ('netCDF-Fortran', '4.5.2', None, ('GCC', '9.3.0')),
-    ('netCDF-C++4', '4.3.1', None, ('GCC', '9.3.0')),
+    ('OpenBLAS','0.3.17', None, ('GCC','9.3.0'))
 ]
 
-buildopts = 'ESMF_NETCDF_INCLUDE=$EBROOTNETCDFMINFORTRAN/include ESMF_NETCDF_LIBS="`nc-config --libs` `nf-config --flibs` `ncxx4-config --libs`"'
+buildopts = 'ESMF_NETCDF=nc-config ESMF_COMM=openmpi ESMF_LAPACK=openblas  '
 
-# too parallel causes the build to become really slow
-maxparallel = 8
+# parallel builds don't always work with esmf it seems
+maxparallel = 1
 
 
 moduleclass = 'geo'

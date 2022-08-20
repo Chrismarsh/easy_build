@@ -1,21 +1,21 @@
 easyblock = 'PythonPackage'
 
 name = 'ESMPy'
-version = '8.3.0b10'
+version = '8.3.0'
 
 homepage = 'https://earthsystemmodeling.org/esmpy'
 description = "Earth System Modeling Framework (ESMF) Python Interface"
 
-toolchain = {'name': 'gomkl', 'version': '2020a'}
+toolchain = {'name': 'foss', 'version': '2020a'}
 
 source_urls = ['https://github.com/esmf-org/esmf/archive/refs/tags/']
 sources = ['v%(version)s.tar.gz']
-checksums = ['3d8dd96056aeb19130e59f42f0c02e3b332c4be2e0cbb2091e636e449f3b767c']
+checksums = ['0ff43ede83d1ac6beabd3d5e2a646f7574174b28a48d1b9f2c318a054ba268fd']
 
 dependencies = [
     ('Python', '3.8.10'),
     ('mpi4py','3.0.3'),
-    ('SciPy-Stack', '2021a'),  # for numpy, mpi4py
+    ('SciPy-Stack', '2022a'),  # for numpy, mpi4py
     ('ESMF', version),
 ]
 
