@@ -16,7 +16,6 @@ checksums = ['0ff43ede83d1ac6beabd3d5e2a646f7574174b28a48d1b9f2c318a054ba268fd']
 dependencies = [
     ('netCDF', '4.7.4', None, ('GCC', '9.3.0')),
     ('netCDF-Fortran', '4.5.2', None, ('GCC', '9.3.0')),
-    ('OpenBLAS','0.3.17', None, ('GCC','9.3.0'))
 ]
 
 buildopts = 'ESMF_NETCDF=nc-config ESMF_COMM=openmpi ESMF_LAPACK=openblas  '
