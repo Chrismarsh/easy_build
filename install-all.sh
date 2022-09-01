@@ -21,6 +21,6 @@ eb sparsehash-2.0.4-GCC-9.3.0.eb --force
 eb trilinos-13.4.0-gompi-2020a.eb --force --inject-checksums
 eb trilinos-13.4.0-gompi-2020a.eb --force
 
-eb chm-1.2.2-gompi-2020a.eb --force 
-eb chm-1.2.2-gompi-2020a.eb --force 
+eb chm-1.2.3-gompi-2020a.eb --force 
+eb chm-1.2.3-gompi-2020a.eb --force 
 
