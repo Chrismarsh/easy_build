@@ -11,7 +11,7 @@ toolchainopts = {'usempi': True, 'pic': True, 'strict': True, 'openmp': True}
 
 source_urls = ['https://github.com/Chrismarsh/CHM/archive/refs/tags/']
 sources = ['%(version)s.tar.gz']
-
+checksums = ['d0b3dcf5257095945fe6b9ba2a91535da4ab1788feb846f151fcaa8406e60df7']
 
 builddependencies = [
     ('CMake', '3.23.1'),

@@ -10,7 +10,7 @@ toolchain = {'name': 'foss', 'version': '2020a'}
 
 source_urls = ['https://github.com/esmf-org/esmf/archive/refs/tags/']
 sources = ['v%(version)s.tar.gz']
-
+checksums = ['acf092d85facb1c7dfd4cf66b052e4c75559115a037bf88e80c1f5df919c4634']
 
 dependencies = [
     ('Python', '3.8.10'),
