@@ -10,6 +10,7 @@ toolchain = {'name': 'GCC', 'version': '9.3.0'}
 
 source_urls = ['https://github.com/firelab/windninja/archive/refs/tags/']
 sources = ['%(version)s.tar.gz']
+checksums = ['fbf2484adae29660219c9b9f9f5d75d4e5d88e68f85778e7918771798ab76809']
 
 builddependencies = [
     ('CMake', '3.23.1'),
