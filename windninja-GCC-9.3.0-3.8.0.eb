@@ -1,0 +1,38 @@
+easyblock = 'CMakeMake'
+
+name = 'Windninja'
+version = '3.8.0'
+
+homepage = 'none'
+description = """Windninja"""
+
+toolchain = {'name': 'GCC', 'version': '9.3.0'}
+
+source_urls = ['https://github.com/firelab/windninja/archive/refs/tags/']
+sources = ['%(version)s.tar.gz']
+
+builddependencies = [
+    ('CMake', '3.23.1'),
+]
+
+dependencies = [
+       ('PROJ','9.0.1'),
+       ('Boost', '1.72.0'),
+       ('GDAL','3.5.1'),
+       ('netCDF', '4.7.4', None, ('GCC', '9.3.0')),
+]
+
+configopts =  ' -DNINJA_QTGUI=FALSE '
+configopts += ' -DNINJAFOAM=FALSE '
+configopts += ' -DOPENMP_SUPPORT=ON '
+
+
+sanity_check_paths = {
+    'dirs': ['bin'],
+    'files': ['bin/WindNinja_cli']
+}
+
+
+maxparallel = 32
+
+moduleclass = 'numlib'
