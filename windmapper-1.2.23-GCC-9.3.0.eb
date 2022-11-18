@@ -1,7 +1,7 @@
 easyblock = 'PythonPackage'
 
 name = 'Windmapper'
-version = '1.2.22'
+version = '1.2.23'
 
 homepage = 'none'
 description = "Windmapper"
@@ -9,7 +9,7 @@ description = "Windmapper"
 toolchain = {'name': 'foss', 'version': '2020a'}
 
 source_urls = ['https://github.com/Chrismarsh/Windmapper/archive/refs/tags/']
-sources = ['v%(version)s.tar.gz']
+sources = ['%(version)s.tar.gz']
 
 dependencies = [
     ('Python', '3.8.10'),
@@ -22,8 +22,6 @@ dependencies = [
 download_dep_fail = True
 
 use_pip = True
-
-installopts = '--no-deps'
 
 sanity_pip_check = False #True
 
