@@ -10,6 +10,7 @@ toolchain = {'name': 'GCC', 'version': '9.3.0'}
 
 source_urls = ['https://github.com/isciences/exactextract/archive/refs/heads/']
 sources = ['master.zip']
+checksums = ['f6d1f2698e29762b400b4a035d59718ec987cfd8d142ccab5a4aa0b6bf05acfb']
 
 builddependencies = [
     ('CMake', '3.23.1'),
