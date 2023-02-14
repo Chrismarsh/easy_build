@@ -18,7 +18,7 @@ builddependencies = [
 dependencies = [
 
        ('GDAL','3.5.1'),
-       ('GOES','3.10.2'),
+       ('GEOS','3.10.2'),
 ]
 
 configopts =  ' -DCMAKE_BUILD_TYPE=Release '
