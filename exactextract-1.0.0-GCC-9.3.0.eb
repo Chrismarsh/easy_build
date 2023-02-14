@@ -1,0 +1,37 @@
+easyblock = 'CMakeMake'
+
+name = 'exactextract'
+version = '1.0.0'
+
+homepage = 'https://github.com/isciences/exactextract'
+description = """exactextract provides a fast and accurate algorithm for summarizing values in the portion of a raster dataset that is covered by a polygon, often referred to as zonal statistics. Unlike other zonal statistics implementations, it takes into account raster cells that are partially covered by the polygon."""
+
+toolchain = {'name': 'GCC', 'version': '9.3.0'}
+
+source_urls = ['https://github.com/isciences/exactextract/archive/refs/heads/']
+sources = ['master.zip']
+
+builddependencies = [
+    ('CMake', '3.23.1'),
+]
+
+dependencies = [
+
+       ('GDAL','3.5.1'),
+       ('GOES','3.10.2'),
+]
+
+configopts =  ' -DCMAKE_BUILD_TYPE=Release '
+configopts += ' -DBUILD_CLI=TRUE '
+configopts += ' -DBUILD_TEST=FALSE '
+configopts += ' -DBUILD_DOC=FALSE '
+
+sanity_check_paths = {
+    'dirs': ['bin'],
+    'files': ['bin/exactextract']
+}
+
+
+maxparallel = 8
+
+moduleclass = 'geo'
