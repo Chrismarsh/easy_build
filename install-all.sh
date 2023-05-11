@@ -1,6 +1,6 @@
 #!/bin/bash
 
-eb Armadillo-10.2.0-gompi-2020a.eb --force
+eb Armadillo-10.4.1-gompi-2020a.eb --force
 eb func-master-gompi-2020a.eb --force --inject-checksums
 eb func-master-gompi-2020a.eb --force 
 eb CGAL-5.2-gompi-2020a.eb --force
