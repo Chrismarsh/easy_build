@@ -12,6 +12,7 @@ source_urls = [
     'https://github.com/uofs-simlab/func/archive/refs/tags/'
 ]
 sources = ['v2.0.tar.gz']
+checksums = ['ca25b960c72bebc5b0be0fedc189ef24e669d21a7571fd59f751a187fb6c1cea']
 
 builddependencies = [
     ('CMake', '3.18'),

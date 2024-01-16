@@ -16,6 +16,7 @@ source_urls = [
     'https://github.com/trilinos/Trilinos/archive'
 ]
 sources = ['%(namelower)s-release-14-4-0.tar.gz']
+checksums = ['8e7d881cf6677aa062f7bfea8baa1e52e8956aa575d6a4f90f2b6f032632d4c6']
 
 builddependencies = [
     ('CMake', '3.18.4'),
