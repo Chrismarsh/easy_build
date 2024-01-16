@@ -1,0 +1,35 @@
+easyblock = 'CMakeMake'
+
+name = 'func'
+version = '2.0'
+
+homepage = 'https://github.com/uofs-simlab/func'
+description = """FunC (Function Comparator) is a C++ tool for approximating any single-variable, pure function with a lookup table (LUT) over a closed interval """
+
+toolchain = {'name': 'GCC', 'version': '9.3.0'}
+
+source_urls = [
+    'https://github.com/uofs-simlab/func/archive/refs/tags/'
+]
+sources = ['v2.0.tar.gz']
+
+builddependencies = [
+    ('CMake', '3.18'),
+]
+
+dependencies = [
+('Boost', '1.72.0'),
+]
+
+
+separate_build_dir = True
+
+configopts = ''
+
+
+sanity_check_paths = {
+    'dirs': ['lib','include'],
+    'files': ['lib/libfunc.so']
+}
+
+moduleclass = 'devel'
