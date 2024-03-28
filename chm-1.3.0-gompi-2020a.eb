@@ -25,7 +25,7 @@ dependencies = [
        ('GSL','2.6'),
        ('Eigen','3.3.7'),
        ('CGAL','5.2.1'),
-       ('func','1.0'),
+       ('func','2.0'),
        ('sparsehash','2.0.4'),
        ('tbb','2020.2'),
        ('Trilinos','15.0.0'),
