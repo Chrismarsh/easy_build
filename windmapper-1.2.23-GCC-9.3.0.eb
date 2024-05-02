@@ -10,6 +10,7 @@ toolchain = {'name': 'foss', 'version': '2020a'}
 
 source_urls = ['https://github.com/Chrismarsh/Windmapper/archive/refs/tags/']
 sources = ['%(version)s.tar.gz']
+checksums = ['95bed0026b51995b12d1f2d6f22131b3c7e48535f420870b7ac4db8acbe32280']
 
 dependencies = [
     ('Python', '3.8.10'),
