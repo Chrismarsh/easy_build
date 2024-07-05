@@ -6,8 +6,8 @@ version = '2.1'
 homepage = 'https://github.com/uofs-simlab/func'
 description = """FunC (Function Comparator) is a C++ tool for approximating any single-variable, pure function with a lookup table (LUT) over a closed interval """
 
-toolchain = {'name': 'GCC', 'version': '12.3.0'}
-toolchainopts = {'pic': True, 'usempi': False, 'openmp': False}
+toolchain = {'name': 'gompi', 'version': '2023a'}
+toolchainopts = {'usempi': True, 'openmp': False}
 
 source_urls = [
     'https://github.com/uofs-simlab/func/archive/refs/tags/'
