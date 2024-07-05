@@ -1,0 +1,26 @@
+easyblock = 'ConfigureMake'
+
+name = 'sparsehash'
+version = '2.0.4'
+
+homepage = 'https://github.com/sparsehash/sparsehash/'
+description = """C++ associative containers """
+
+toolchain = {'name': 'GCC', 'version': '9.3.0'}
+
+source_urls = ['https://github.com/sparsehash/sparsehash/archive/']
+
+sources = ['sparsehash-%(version)s.tar.gz']
+checksums = ['8cd1a95827dfd8270927894eb77f62b4087735cbede953884647f16c521c7e58']
+
+
+
+separate_build_dir = True
+
+
+sanity_check_paths = {
+    'dirs': ['include'],
+    'files': ['include/sparsehash/sparse_hash_set']
+}
+
+moduleclass = 'devel'

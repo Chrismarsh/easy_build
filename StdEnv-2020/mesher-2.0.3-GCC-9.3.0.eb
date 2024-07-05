@@ -1,0 +1,44 @@
+easyblock = 'CMakeMake'
+
+name = 'mesher'
+version = '2.0.3'
+
+homepage = 'https://github.com/Chrismarsh/mesher'
+description = """Mesher is a novel multi-objective unstructured mesh generation software that allows mesh generation to be generated from an arbitrary number of hydrologically important features while maintaining a variable spatial resolution. """
+toolchain = {'name': 'GCC', 'version': '9.3.0'}
+toolchainopts = {'openmp': True}
+
+source_urls = ['https://github.com/Chrismarsh/mesher/archive/refs/tags/']
+sources = ['%(version)s.tar.gz']
+
+
+builddependencies = [
+    ('CMake', '3.23.1'),
+]
+
+dependencies = [
+       ('Boost', '1.72.0'),
+       ('CGAL','5.2.1'),
+       ('GDAL','3.5.1'),
+       ('PROJ','9.0.1'),
+       ('METIS', '5.1.0')
+]
+
+
+configopts =  ' -DBUILD_WITH_CONAN=FALSE '
+configopts += ' -DUSE_MPI=TRUE '
+configopts += ' -DENABLE_SAFE_CHECKS=ON '
+configopts += ' -DBoost_NO_BOOST_CMAKE=ON '
+configopts += ' -DUSE_TCMALLOC=OFF '
+configopts += ' -DUSE_JEMALLOC=ON '
+
+
+sanity_check_paths = {
+    'dirs': ['bin'],
+    'files': ['bin/mesher']
+}
+
+
+maxparallel = 32
+
+moduleclass = 'numlib'
